@@ -62,3 +62,38 @@ VALUES
 (5, 2),  -- Suspense em Pulp Fiction
 (1, 3),  -- Ação em Jurassic Park
 (4, 3);  -- Ficção Científica em Jurassic Park
+
+INSERT INTO Filme (Titulo, ID_Diretor, ID_Studio, ID_Classificacao, Poster_Link)
+VALUES
+('The Dark Knight', 1, 1, 5, 'https://m.media-amazon.com/images/I/91KkPxxCUlL._AC_SY679_.jpg'), -- Christopher Nolan, Warner Bros., 18 anos
+('Forrest Gump', 1, 2, 3, 'https://m.media-amazon.com/images/I/51fJeIFXe-L._AC_.jpg'), -- Robert Zemeckis, Paramount Pictures, Livre
+('The Matrix', 1, 3, 5, 'https://m.media-amazon.com/images/I/71+X8vV+R8L._AC_SY679_.jpg'); -- Lana Wachowski, Warner Bros., 18 anos
+
+INSERT INTO Filme (Titulo, ID_Diretor, ID_Studio, ID_Classificacao, Poster_Link)
+VALUES
+('The Shawshank Redemption', 2, 1, 3, 'https://m.media-amazon.com/images/I/51NiG6Jz+qL._AC_.jpg'), -- Frank Darabont, Castle Rock Entertainment, Livre
+('The Godfather', 3, 2, 5, 'https://m.media-amazon.com/images/I/71V4zlm7c5L._AC_SY679_.jpg'), -- Francis Ford Coppola, Paramount Pictures, 18 anos
+('Gladiator', 2, 3, 4, 'https://m.media-amazon.com/images/I/71g1zZ8A6DL._AC_SY679_.jpg'), -- Ridley Scott, Universal Pictures, 16 anos
+('Titanic', 3, 1, 3, 'https://m.media-amazon.com/images/I/81GVZDD5V+L._AC_SY679_.jpg'), -- James Cameron, Paramount Pictures, Livre
+('The Avengers', 1, 2, 4, 'https://m.media-amazon.com/images/I/71Wjfno-VqL._AC_SY679_.jpg'), -- Joss Whedon, Marvel Studios, 16 anos
+('The Lion King', 2, 3, 3, 'https://m.media-amazon.com/images/I/91jjT9v7IcL._AC_SY679_.jpg'), -- Roger Allers, Walt Disney Pictures, Livre
+('Avatar', 3, 1, 3, 'https://m.media-amazon.com/images/I/91d1rYdWf0L._AC_SY679_.jpg'), -- James Cameron, 20th Century Studios, Livre
+('The Silence of the Lambs', 1, 2, 5, 'https://m.media-amazon.com/images/I/51ZyGe3KxAL._AC_SY679_.jpg'), -- Jonathan Demme, Orion Pictures, 18 anos
+('Inglourious Basterds', 2, 3, 5, 'https://m.media-amazon.com/images/I/91-+Y0d8FzL._AC_SY679_.jpg'), -- Quentin Tarantino, The Weinstein Company, 18 anos
+('Interstellar', 1, 1, 4, 'https://m.media-amazon.com/images/I/91XqHHg4eqL._AC_SY679_.jpg'), -- Christopher Nolan, Paramount Pictures, 16 anos
+('Star Wars: A New Hope', 3, 2, 3, 'https://m.media-amazon.com/images/I/91+lmC61NxL._AC_SY679_.jpg'), -- George Lucas, Lucasfilm, Livre
+('The Social Network', 1, 3, 4, 'https://m.media-amazon.com/images/I/91fnTuKctdL._AC_SY679_.jpg'), -- David Fincher, Columbia Pictures, 16 anos
+('Back to the Future', 2, 1, 3, 'https://m.media-amazon.com/images/I/81nqOxlYo1L._AC_SY679_.jpg'), -- Robert Zemeckis, Universal Pictures, Livre
+('Fight Club', 2, 2, 5, 'https://m.media-amazon.com/images/I/91Ib6Ixf3GL._AC_SY679_.jpg'), -- David Fincher, 20th Century Fox, 18 anos
+('The Terminator', 3, 3, 5, 'https://m.media-amazon.com/images/I/71a7Jlq2WML._AC_SY679_.jpg'), -- James Cameron, Orion Pictures, 18 anos
+('Goodfellas', 1, 1, 5, 'https://m.media-amazon.com/images/I/81h4q2n5GdL._AC_SY679_.jpg'), -- Martin Scorsese, Warner Bros., 18 anos
+('The Prestige', 1, 2, 4, 'https://m.media-amazon.com/images/I/71W5Jrt6yPL._AC_SY679_.jpg'), -- Christopher Nolan, Warner Bros., 16 anos
+('The Departed', 2, 3, 5, 'https://m.media-amazon.com/images/I/51hRl7O1-uL._AC_SY679_.jpg'), -- Martin Scorsese, Warner Bros., 18 anos
+('The Dark Knight Rises', 1, 1, 5, 'https://m.media-amazon.com/images/I/91rfTcEAtOL._AC_SY679_.jpg'), -- Christopher Nolan, Warner Bros., 18 anos
+('Spider-Man: No Way Home', 3, 2, 4, 'https://m.media-amazon.com/images/I/91Dfx9PbzyL._AC_SY679_.jpg'), -- Jon Watts, Sony Pictures, 16 anos
+('The Wolf of Wall Street', 1, 3, 5, 'https://m.media-amazon.com/images/I/91ctNiTUm8L._AC_SY679_.jpg'), -- Martin Scorsese, Paramount Pictures, 18 anos
+('The Revenant', 2, 1, 5, 'https://m.media-amazon.com/images/I/91TYuYt-WML._AC_SY679_.jpg'), -- Alejandro González Iñárritu, 20th Century Fox, 18 anos
+('La La Land', 3, 2, 3, 'https://m.media-amazon.com/images/I/71yL93PSi0L._AC_SY679_.jpg'), -- Damien Chazelle, Lionsgate, Livre
+('Drive', 1, 3, 5, 'https://m.media-amazon.com/images/I/91tboKKJhlL._AC_SY679_.jpg'), -- Nicolas Winding Refn, FilmDistrict, 18 anos
+('The Big Lebowski', 2, 1, 5, 'https://m.media-amazon.com/images/I/81C1he2u1DL._AC_SY679_.jpg'); -- Joel Coen, Universal Pictures, 18 anos
+
