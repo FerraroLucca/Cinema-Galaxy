@@ -1,0 +1,23 @@
+-- Excluir a tabela Ator_Filme se existir
+DROP TABLE IF EXISTS Ator_Filme;
+
+-- Excluir a tabela Genero_Filme se existir
+DROP TABLE IF EXISTS Genero_Filme;
+
+-- Excluir a tabela Filme se existir
+DROP TABLE IF EXISTS Filme;
+
+-- Excluir a tabela Classificacao se existir
+DROP TABLE IF EXISTS Classificacao;
+
+-- Excluir a tabela Genero se existir
+DROP TABLE IF EXISTS Genero;
+
+-- Excluir a tabela Studio se existir
+DROP TABLE IF EXISTS Studio;
+
+-- Excluir a tabela Atores se existir
+DROP TABLE IF EXISTS Atores;
+
+-- Excluir a tabela Diretor se existir
+DROP TABLE IF EXISTS Diretor;

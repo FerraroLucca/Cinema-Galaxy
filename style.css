@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+  align-items: center;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.filmes .filme-lista {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.filmes .filme {
+  text-align: center;
+}
+
+.filmes .filme img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .icone-restrito img {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar .icone-restrito:hover {
+  opacity: 0.8;
+}
+
+/* Página Acervo */
+.acervo #lista-filmes {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+header .header_icone {
+  color: #fff;
+  background-color: #007bff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+header .header_icone:hover {
+  background-color: #0056b3;
+}
+
+/* Estilizando a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilizando cabeçalhos */
+th {
+  background-color: #1f201f;
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+/* Estilizando as células da tabela */
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Centralizar o conteúdo da célula */
+td.poster {
+  text-align: center;
+}
+
+/* Adicionando efeito de hover nas linhas */
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Ajustando a imagem */
+img {
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilizando a primeira linha da tabela */
+thead {
+  background-color: #333;
+}
+
+/* Estilizando as bordas das células */
+td, th {
+  border: 1px solid #ddd;
+}
+
+/* Melhorando a exibição em dispositivos móveis */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  th, td {
+    padding: 10px;
+  }
+}
+

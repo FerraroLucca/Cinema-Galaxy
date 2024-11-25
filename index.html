@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Galaxy</title>
+    <!-- Link para o Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Cinema Galaxy</h1>
+        <nav>
+          <ul>
+            <li><a href="#filmes">Filmes</a></li>
+            <li><a href="#horarios">Horários</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <!-- Ícone com link para área restrita -->
+            <a href="acervo.html" class="icone-restrito" title="Área Restrita">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z"
+                />
+              </svg>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="filmes" class="filmes">
+        <div class="container">
+          <h2>Em Cartaz</h2>
+          <div class="filme-lista" id="filme-lista">
+            <!-- Os filmes serão inseridos aqui dinamicamente via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section id="horarios" class="horarios">
+        <div class="container">
+          <h2>Horários</h2>
+          <p>
+            Consulte os horários de exibição diretamente na nossa bilheteira ou
+            no aplicativo.
+          </p>
+        </div>
+      </section>
+
+      <section id="contato" class="contato">
+        <div class="container">
+          <h2>Contato</h2>
+          <p>Email: contato@cinemagalaxy.com</p>
+          <p>Telefone: (11) 1234-5678</p>
+          <p>Endereço: Rua do Cinema, 123 - São Paulo, SP</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Cinema Galaxy. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Função para buscar os 3 filmes mais recentes da API
+      async function carregarFilmes() {
+        try {
+          const response = await fetch("http://localhost:3000/filmes");
+          const filmes = await response.json();
+
+          // Ordenar filmes por data de lançamento (presumindo que a API forneça a data de lançamento)
+          filmes.sort(
+            (a, b) => new Date(b.Data_Lancamento) - new Date(a.Data_Lancamento)
+          );
+
+          // Pegar os 3 filmes mais recentes
+          const filmesRecentes = filmes.slice(0, 3);
+
+          // Elemento onde os filmes serão inseridos
+          const filmeLista = document.getElementById("filme-lista");
+
+          // Limpar filmes existentes
+          filmeLista.innerHTML = "";
+
+          // Iterar sobre os 3 filmes e criar o conteúdo
+          filmesRecentes.forEach((filme) => {
+            const artigoFilme = document.createElement("article");
+            artigoFilme.classList.add("filme");
+
+            // Adicionar conteúdo ao artigo
+            artigoFilme.innerHTML = `
+              <img src="${filme.poster_link}" alt="Poster do ${filme.titulo}" />
+              <h3>${filme.titulo}</h3>
+              <p>${filme.nome_studio} | ${filme.faixa_etaria}</p>
+            `;
+
+            // Adicionar o artigo à lista de filmes
+            filmeLista.appendChild(artigoFilme);
+          });
+        } catch (err) {
+          console.error("Erro ao carregar filmes:", err);
+        }
+      }
+
+      // Carregar filmes assim que a página for carregada
+      document.addEventListener("DOMContentLoaded", carregarFilmes);
+    </script>
+  </body>
+</html>

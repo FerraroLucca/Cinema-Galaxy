@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acervo de Filmes - Cinema Galaxy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Acervo de Filmes</h1>
+        <a href="index.html" class="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path
+              d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="acervo">
+        <div class="container">
+          <h2>Filmes Disponíveis</h2>
+          <p>
+            Aqui você pode consultar todos os filmes cadastrados no nosso
+            sistema.
+          </p>
+          <div id="lista-filmes">
+            <!-- Área para integração com a API -->
+            <p>Os filmes serão carregados aqui...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Cinema Galaxy. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      async function carregarFilmes() {
+        try {
+          const response = await fetch("http://localhost:3000/filmes");
+          const filmes = await response.json();
+
+          const listaFilmes = document.getElementById("lista-filmes");
+          listaFilmes.innerHTML = `
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Diretor</th>
+                            <th>Estúdio</th>
+                            <th>Classificação</th>
+                            <th>Pôster</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${filmes
+                          .map(
+                            (filme) => `
+                                <tr>
+                                    <td>${filme.titulo}</td>
+                                    <td>${filme.nome_diretor}</td>
+                                    <td>${filme.nome_studio}</td>
+                                    <td>${filme.faixa_etaria}</td>
+                                    <td class="poster"><img src="${filme.poster_link}" alt="${filme.titulo}" width="100" /></td>
+                                </tr>
+                            `
+                          )
+                          .join("")}
+                    </tbody>
+                </table>
+            `;
+        } catch (error) {
+          console.error("Erro ao carregar filmes:", error);
+          document.getElementById("lista-filmes").innerText =
+            "Erro ao carregar os filmes.";
+        }
+      }
+
+      // Chama a função ao carregar a página
+      window.onload = carregarFilmes;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+-- Tabela Diretor
+CREATE TABLE IF NOT EXISTS Diretor (
+    ID_Diretor SERIAL PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Data_Nascimento DATE NOT NULL,
+    Pais_Nascimento VARCHAR(100) NOT NULL
+);
+
+-- Tabela Atores
+CREATE TABLE IF NOT EXISTS Atores (
+    ID_Ator SERIAL PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Data_Nascimento DATE NOT NULL,
+    Pais_Nascimento VARCHAR(100) NOT NULL,
+    Linguas_Faladas VARCHAR(255) NOT NULL
+);
+
+-- Tabela Studio
+CREATE TABLE IF NOT EXISTS Studio (
+    ID_Studio SERIAL PRIMARY KEY,
+    Nome_Studio VARCHAR(100) NOT NULL,
+    Ano_Criacao INT NOT NULL CHECK (Ano_Criacao >= 1000 AND Ano_Criacao <= 9999)
+);
+
+-- Tabela Genero de Filme
+CREATE TABLE IF NOT EXISTS Genero (
+    ID_Genero SERIAL PRIMARY KEY,
+    Genero VARCHAR(50) NOT NULL
+);
+
+-- Tabela Classificação
+CREATE TABLE IF NOT EXISTS Classificacao (
+    ID_Classificacao SERIAL PRIMARY KEY,
+    Faixa_Etaria VARCHAR(20) NOT NULL
+);
+
+-- Tabela Filme
+CREATE TABLE IF NOT EXISTS Filme (
+    ID_Filme SERIAL PRIMARY KEY,
+    Titulo VARCHAR(150) NOT NULL,
+    ID_Diretor INT NOT NULL REFERENCES Diretor(ID_Diretor),
+    ID_Studio INT NOT NULL REFERENCES Studio(ID_Studio),
+    ID_Classificacao INT NOT NULL REFERENCES Classificacao(ID_Classificacao),
+    Poster_Link VARCHAR(255) NOT NULL
+);
+
+-- Tabela intermediária Ator_Filme (muitos para muitos entre Atores e Filmes)
+CREATE TABLE IF NOT EXISTS Ator_Filme (
+    ID_Ator INT NOT NULL REFERENCES Atores(ID_Ator),
+    ID_Filme INT NOT NULL REFERENCES Filme(ID_Filme),
+    PRIMARY KEY (ID_Ator, ID_Filme)
+);
+
+-- Tabela intermediária Genero_Filme (muitos para muitos entre Generos e Filmes)
+CREATE TABLE IF NOT EXISTS Genero_Filme (
+    ID_Genero INT NOT NULL REFERENCES Genero(ID_Genero),
+    ID_Filme INT NOT NULL REFERENCES Filme(ID_Filme),
+    PRIMARY KEY (ID_Genero, ID_Filme)
+);
